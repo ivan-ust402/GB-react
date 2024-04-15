@@ -1,0 +1,16 @@
+.message {
+    color: orangered;
+    background-color: #eee;
+    opacity: 1;
+    transition: all .3s ease-in;
+    @media (hover: hover) {
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+    @media (hover: none) {
+        &:active {
+            opacity: 0.8;
+        }
+    }
+}
