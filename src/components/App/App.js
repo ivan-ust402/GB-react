@@ -69,6 +69,7 @@ function App({ myName }) {
   return (
     <div className="App">
       <header className="App-header">
+        <h1>Homework 1</h1>
         My First React App
         <h3>Hello world!</h3>
         <h3>My name is {myName}</h3>
@@ -81,6 +82,7 @@ function App({ myName }) {
             marginBottom: "20px",
           }}
         />
+        <h1>Homework 2</h1>
         <div className={styles["messages"]}>
           <form className={styles["messages__form"]} onSubmit={sendMessage}>
             <input
@@ -109,6 +111,15 @@ function App({ myName }) {
             })
             .reverse()}
         </div>
+        <hr
+          style={{
+            color: "white",
+            backgroundColor: "white",
+            width: "100%",
+            marginBottom: "20px",
+          }}
+        />
+        <h1>Homework 3</h1>
       </header>
     </div>
   )
