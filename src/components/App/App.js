@@ -1,71 +1,11 @@
 import "./App.css"
-import styles from "./App.module.scss"
 import Message from "../Message"
-import { useEffect, useState } from "react"
+import MaterialUI from "../MaterialUI"
+import SomeNestedChild from "../SomeNestedChild/SomeNestedChild"
+import Chat from "../Chat"
+import ChatMUI from "../ChatMUI"
 
 function App({ myName }) {
-  const [messageList, setMessageList] = useState([])
-  const [message, setMessage] = useState({
-    text: "",
-    author: "",
-  })
-  const ROBOT_MESSAGE =
-    "Рад приветствовать на нашем ресурсе! Сейчас все людишки заняты, поэтому я поработаю немного за них, правда я умею очень мало. Я могу лишь присылать это сообщение каждый раз после вашего сообщения. Но что поделать такая у меня функция и роль. Скоро кто-нибудь из людишек освободиться и ответит вам! Наберитесь терпения!"
-
-  useEffect(() => {
-    setMessageList([
-      {
-        text: "Привет, мир",
-        author: "Реакт программа",
-      },
-      {
-        text: "Привет, программа",
-        author: "Иван",
-      },
-      {
-        text: "Как дела?",
-        author: "Иван",
-      },
-      {
-        text: "Error 404",
-        author: "Реакт программа",
-      },
-      {
-        text: "Ну что ж, с первым падением билда товарищи",
-        author: "Иван",
-      },
-    ])
-  }, [])
-  useEffect(() => {
-    if (
-      messageList.length > 0 &&
-      messageList.slice(-1)[0].author !== "Bot-bibot" && messageList.slice(-1)[0].author !== "Иван"
-    ) {
-      sendRobotMessage()
-    }
-  }, [messageList])
-
-  function sendRobotMessage() {
-    setTimeout(
-      () =>
-        setMessageList((prev) => [
-          ...prev,
-          { author: "Bot-bibot", text: ROBOT_MESSAGE },
-        ]),
-      1500
-    )
-  }
-
-  function sendMessage(e) {
-    e.preventDefault()
-    setMessageList((prev) => [...prev, message])
-    setMessage({
-      text: "",
-      author: "",
-    })
-    // sendRobotMessage()
-  }
-
   return (
     <div className="App">
       <header className="App-header">
@@ -83,34 +23,7 @@ function App({ myName }) {
           }}
         />
         <h1>Homework 2</h1>
-        <div className={styles["messages"]}>
-          <form className={styles["messages__form"]} onSubmit={sendMessage}>
-            <input
-              value={message.text}
-              type="text"
-              className={styles["messages__input"]}
-              onInput={(e) =>
-                setMessage({
-                  author: "Ivan",
-                  text: `${e.target.value}`,
-                })
-              }
-            />
-            <button className={styles["messages__button"]}>
-              Отправить сообщение
-            </button>
-          </form>
-          {messageList
-            .map((message, index) => {
-              return (
-                <div className={styles["message"]} key={index}>
-                  <h6 className={styles["message__title"]}>{message.author}</h6>
-                  <p className={styles["message__text"]}>{message.text}</p>
-                </div>
-              )
-            })
-            .reverse()}
-        </div>
+        <Chat />
         <hr
           style={{
             color: "white",
@@ -119,8 +32,22 @@ function App({ myName }) {
             marginBottom: "20px",
           }}
         />
-        <h1>Homework 3</h1>
+        <h1>ClassWork 3</h1>
+        <MaterialUI />
+        <SomeNestedChild />
+        <hr
+          style={{
+            color: "white",
+            backgroundColor: "white",
+            width: "100%",
+            marginBottom: "20px",
+          }}
+        />
       </header>
+      <section className="center">
+        <h1>Homework 3</h1>
+        <ChatMUI />
+      </section>
     </div>
   )
 }
