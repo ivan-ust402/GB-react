@@ -116,7 +116,7 @@ function Chat() {
           alignItems: "center",
           flexDirection: "row",
           borderRadius: "20px",
-          width: "90%",
+          marginRight: 5,
           position: 'absolute',
           bottom: 50,
           left: 0,
@@ -155,7 +155,7 @@ function Chat() {
           Send Message
         </Button>
       </Box>
-      <List sx={{ width: "100%", bgcolor: "background.paper", height: 310, overflow: 'scroll' }}>
+      <List sx={{ width: "100%", bgcolor: "background.paper", height: 310, overflow: 'scroll'}}>
         {messageList
           .map((message, index) => (
             <ListItem
@@ -166,7 +166,7 @@ function Chat() {
                 flexDirection: "column",
                 alignItems: "flex-start",
                 gap: "2px",
-                width: "100%",
+                paddingRight: 10,
               }}
             >
               <Typography
