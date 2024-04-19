@@ -40,5 +40,12 @@
 .center {
   padding-left: calc(50% - 600px);
   padding-right: calc(50% - 600px);
+  /* color: #f98538; */
+}
+
+.homework3__display {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
 }
 

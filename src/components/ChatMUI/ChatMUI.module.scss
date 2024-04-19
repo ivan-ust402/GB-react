@@ -9,8 +9,11 @@
   padding-right: 25px;
   width: 100%;
   box-sizing: border-box;
+  position: relative;
+  height: 500px;
   &__form {
     display: flex;
+    align-items: center;
     flex-direction: row;
     border-radius: 20px;
     width: 100%;

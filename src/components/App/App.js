@@ -4,6 +4,7 @@ import MaterialUI from "../MaterialUI"
 import SomeNestedChild from "../SomeNestedChild/SomeNestedChild"
 import Chat from "../Chat"
 import ChatMUI from "../ChatMUI"
+import ChatsMUI from "../ChatsMUI"
 
 function App({ myName }) {
   return (
@@ -44,9 +45,12 @@ function App({ myName }) {
           }}
         />
       </header>
-      <section className="center">
+      <section className="center homework3">
         <h1>Homework 3</h1>
-        <ChatMUI />
+        <div className="homework3__display">
+          <ChatsMUI />
+          <ChatMUI />
+        </div>
       </section>
     </div>
   )
